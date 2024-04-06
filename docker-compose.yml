@@ -1,0 +1,14 @@
+version: "3"
+services:
+  firefoxbrowser:
+    env_file: environment.env
+    build: .
+    restart: unless-stopped
+    image: browser:1.0 
+    ports:
+      - "3389:3389"
+    volumes:
+      - home:/home
+volumes:
+  home:
+    external: false
